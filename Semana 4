@@ -1,0 +1,119 @@
+algoritmo "Semana 4 - Pacetech"
+// Função :  Conversor
+// Autor :    Gabriel Pereira
+// Data : 25/10/2021
+
+var
+   opc1, valorFahrenheit:inteiro
+   valorEmReais, cotacaoDolar, conversao, C, F:real
+   ops: caractere
+
+
+inicio
+
+   escreva("Digite a cotação dolar: ")
+   leia (cotacaoDolar)
+
+
+   Repita
+      escreval()
+      escreval("Menu: --------------------------|")
+      escreval("[1] --- Conversão Dolar         |")
+      escreval("[2] --- Conversão Reais         |")
+      escreval("[3] --- Celcius para Fahrenheit |")
+      escreval("[4] --- Fahrenheit para Celcius |")
+      escreval("[5] --- Sair                    |")
+      escreval("|_______________________________|")
+
+
+
+
+
+      leia(opc1)
+      escolha opc1
+
+         repita
+         caso 1
+            repita
+               escreva("Digite o valor em Reais para conversão: ")
+               leia (valorEmReais)
+
+               conversao<- cotacaoDolar * valorEmReais
+
+               escreval ("Valores em Reais: R$", valorEmReais)
+               escreval ("Quantidade de dolares: U$", conversao)
+               escreval ("Deseja realizar outra operação? ")
+               leia (ops)
+               se ops = "SIM" entao
+               senao
+               fimse
+
+            ate ops="NÃO"
+
+         caso 2
+            repita
+               escreva("Digite o valor em Dolar para conversão: ")
+               leia (valorEmReais)
+
+               conversao<- valorEmReais/cotacaoDolar
+
+               escreval ("Valores em Reais: R$", valorEmReais)
+               escreval ("Quantidade de dolares: U$", conversao)
+               escreval ("Deseja realizar outra operação? ")
+               leia (ops)
+               se ops = "SIM" entao
+               senao
+               fimse
+
+            ate ops="NÃO"
+         caso 3
+            repita
+               escreva("Digite o valor em Celcius: ")
+               leia (C)
+
+               F <-(C * 9/5) + 32
+
+               escreval ("Valor convertido em FAH: ", F)
+
+
+               escreval ("Deseja realizar outra operação? ")
+               leia (ops)
+               se ops = "SIM" entao
+               senao
+               fimse
+            ate ops="NÃO"
+
+
+
+         caso 4
+
+            repita
+               escreva("Digite o valor em Fahrenheit: ")
+               leia (F)
+
+               C<-(F - 32) * 5/9
+
+               escreval ("Valor convertido em Cº: ", C)
+
+
+               escreval ("Deseja realizar outra operação? ")
+               leia (ops)
+               se ops = "SIM" entao
+               senao
+               fimse
+            ate ops="NÃO"
+
+
+
+
+         caso 5
+            escreval ("Finalizando...")
+
+         Outrocaso
+            escreva ("Opção invalida")
+
+         fimescolha
+
+      ate opc1 = 5
+
+fimalgoritmo
