@@ -1,0 +1,113 @@
+Algoritmo "Semana 5"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Gabriel Vieira Pereira
+// Data atual  : 26/10/2021
+Var
+   // Seção de Declarações das variáveis
+   vC: vetor [1..4] de real
+   vF: vetor [1..4] de real
+   ConversaoF: vetor [1..4] de real
+   ConversaoC: vetor [1..4] de real
+   h: vetor [1..4] de inteiro
+   i, j :inteiro
+   aux: real
+   opc1: inteiro
+   conversao, c: inteiro
+   f: inteiro
+
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Repita
+      escreval()
+      escreval("--------------Menu:-------------|")
+      escreval("[1] --- Celcius para Fahrenheit |")
+      escreval("[2] --- Fahrenheit para Celcius |")
+      escreval("[3] --- Sair                    |")
+      escreval("|-------------------------------|")
+
+      leia(opc1)
+      escolha opc1
+
+      caso 1
+
+
+         para i <- 1 ate 4 faca
+            Escreva ("Qual ", h[i], " horario da temperatura?")
+            leia (h[i])
+
+         fimpara
+         para i<- 1 ate 4 faca
+            Escreva ("Valor Celcius: ")
+            leia (vC[i])
+            conversaoF[i] <- ( vC[i] * 9/5)+32)
+         fimpara
+
+
+         para i <- 1 ate 3 faca
+            para j <- i+1 ate 4 faca
+               se (vC[i] > vC[j]) entao
+                  aux <- vC[i]
+                  vC[i] <- vC[j]
+                  vC[j] <- aux
+               fimse
+
+            fimpara
+         fimpara
+
+         limpatela
+         para i <- 1 ate 4 faca
+            escreval ("Temperatura ", vC[i], " graus celcius, registrada as ", h[i], "h correspondente a ", conversaoF[i], " graus Fahrenheit")
+            faca
+
+         fimpara
+
+
+
+
+      caso 2
+
+
+         para i <- 1 ate 4 faca
+            Escreva ("Qual o ", h[i], "o horario da temperatura?")
+            leia (h[i])
+         fimpara
+         para i<- 1 ate 4 faca
+            Escreva ("Valor Fahrenheit: ")
+            leia (vF[i])
+            conversaoC[i] <- (vF[i] - 32 )* 5/9)
+         fimpara
+
+
+
+         para i <- 1 ate 3 faca
+            para j <- i+1 ate 4 faca
+               se (vF[i] > vF[j]) entao
+                  aux <- vF[i]
+                  vF[i] <- vF[j]
+                  vF[j] <- aux
+               fimse
+
+            fimpara
+         fimpara
+
+
+         para i <- 1 ate 4 faca
+
+             limpatela
+            escreval ("Temperatura ", vF[i], " graus Fahrenheit, registrada as ", h[i], "h correspondente a ", conversaoC[i], " graus Celcius")
+         fimpara
+
+
+      caso 3
+         escreval ("Finalizando...")
+
+      Outrocaso
+         escreva ("Opção invalida")
+
+      fimescolha
+
+   ate opc1 = 3
+
+Fimalgoritmo
